@@ -14,8 +14,7 @@
 </p>
 @endforeach
 
-@endforeach
-
 @else
 <p>No listings found</p>
 @endunless
+@endsection
