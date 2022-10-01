@@ -19,7 +19,6 @@ Route::get('/', function () {
 
 Route::get('/',function(){
     return view('listings',[
-        'heading' =>'Latest Listings',
         'listings' => Listing::all()
     ]);
 });
