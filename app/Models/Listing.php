@@ -12,7 +12,7 @@ class Listing extends Model
     protected $fillable = ['title','company',
     'location',
     'website','email',
-    'description','tags'];
+    'description','tags','logo'];
     
     public function scopeFilter($query,array $filters)
     {
