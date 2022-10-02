@@ -9,7 +9,7 @@
                         <p class="mb-4">Post a gig to find a developer</p>
                     </header>
 
-                    <form action="/listings" method="POST">
+                    <form action="/listings" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-6">
                             <label
@@ -20,7 +20,7 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="company"
+                                name="company" value="{{old('company')}}"
                             />
                             @error('company')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -34,7 +34,7 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="title"
+                                name="title" value="{{old('title')}}"
                                 placeholder="Example: Senior Laravel Developer"
                             />
                             @error('title')
@@ -51,7 +51,7 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="location"
+                                name="location" value="{{old('location')}}"
                                 placeholder="Example: Remote, Boston MA, etc"
                             />
                             @error('location')
@@ -66,7 +66,7 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="email"
+                                name="email" value="{{old('email')}}"
                             />
                             @error('email')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -83,7 +83,7 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="website"
+                                name="website" value="{{old('website')}}"
                             />
                             @error('website')
                             <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -98,7 +98,7 @@
                             <input
                                 type="text"
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="tags"
+                                name="tags" value="{{old('tags')}}"
                                 placeholder="Example: Laravel, Backend, Postgres, etc"
                             />
                             @error('tags')
@@ -106,7 +106,7 @@
                             @enderror
                         </div>
 
-                        <!-- <div class="mb-6">
+                        <div class="mb-6">
                             <label for="logo" class="inline-block text-lg mb-2">
                                 Company Logo
                             </label>
@@ -115,7 +115,10 @@
                                 class="border border-gray-200 rounded p-2 w-full"
                                 name="logo"
                             />
-                        </div>  -->
+                            @error('logo')
+                            <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                            @enderror
+                        </div> 
 
                         <div class="mb-6">
                             <label
@@ -126,7 +129,7 @@
                             </label>
                             <textarea
                                 class="border border-gray-200 rounded p-2 w-full"
-                                name="description"
+                                name="description" value="{{old('description')}}"
                                 rows="10"
                                 placeholder="Include tasks, requirements, salary, etc"
                             ></textarea>
