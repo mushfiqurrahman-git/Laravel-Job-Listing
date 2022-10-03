@@ -9,7 +9,7 @@ class Listing extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title','company',
+    protected $fillable = ['user_id','title','company',
     'location',
     'website','email',
     'description','tags','logo'];
@@ -28,5 +28,11 @@ class Listing extends Model
     
         }
 
+    }
+
+    //Relationship to user
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id');
     }
 }
